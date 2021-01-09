@@ -85,26 +85,37 @@
 
         code,
         pre {
-            padding: 7px;
-            font-size: 13px;
-            font-family: Consolas, Monaco, Menlo, Consolas, monospace;
+            color: #ffffff;
+            font-family: "Fira Mono", Menlo, Monaco, "Lucida Console","Courier New", Courier, monospace;
+            font-size: 16px;
+            line-height: 1.375;
+            direction: ltr;
+            text-align: left;
+            word-spacing: normal;
+			padding: 5px 3px;
+            hyphens: none;
+            white-space: pre;
+            white-space: pre-wrap;
+            background: #322931;
+            color: #b9b5b8;
+			border-radius: 5px;
             word-break: break-all;
             word-wrap: break-word;
         }
-
-        code:not([class]) {
-            padding: 5px 5px;
-            background: #fff;
-            border: 1px solid #ddd;
-            box-shadow: 1px 1px 0 #fff, 2px 2px 0 #ddd;
+       code:not([class]) {
+			font-family: "Fira Mono", Menlo, Monaco, "Lucida Console","Courier New", Courier, monospace;
+            padding: 2px 4px;
+            background: #322931;
+            color: #b9b5b8;
+            border-radius: 3px;
             margin-left: 3px;
             margin-right: 3px;
-
+            
             .dark-theme &:not([class]) {
-                background: transparent;
-                box-shadow: 1px 1px 0 $dark-font-secondary-color, 2px 2px 0 $dark-font-secondary-color;
+                background: #2d2d2d;
+                color: #e06c75;
             }
-        }
+}
 
         ul {
             padding-left: 2em;
