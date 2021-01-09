@@ -29,7 +29,7 @@ jobs:
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
-        deploy_key: ${{ secrets.publickey }}        # 上面配置的私钥名称
+        #deploy_key: ${{ secrets.publickey }}        # 上面配置的私钥名称
         external_repository: wuyangzz/wuyangzz.github.io     # Pages 发布到远程仓库
         publish_dir: ./public       # hugo 编译生成的 public 目录下的文件
         keep_files: false           # 不保留 *.github.io 仓库中已有的文件
