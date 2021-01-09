@@ -1,0 +1,37 @@
+name: CI
+
+# 持续发布的分支
+on:
+  push:
+    branches: main
+
+# 执行的 jobs
+jobs:
+  # 编译环境
+  build:
+    runs-on: ubuntu-latest
+
+    # 执行的步骤
+    steps:
+    # 检出 sudrizzz/blog_workflow 工程，固定写法
+    - uses: actions/checkout@v1
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: latest
+
+    # 执行 hugo，编译出源文件
+    - name: Build
+      run: hugo --gc --minify --cleanDestinationDir
+
+    # 部署
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.publickey }}        # 上面配置的私钥名称
+        external_repository: sudrizzz/sudrizzz.github.io     # Pages 发布到远程仓库
+        publish_dir: ./public       # hugo 编译生成的 public 目录下的文件
+        keep_files: false           # 不保留 *.github.io 仓库中已有的文件
+        publish_branch: main      # 远程仓库分支
+        commit_message: ${{ github.event.head_commit.message }}
