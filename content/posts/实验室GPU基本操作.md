@@ -21,13 +21,13 @@ tags: ["GPU"]
 
 ## 2. 打开[NGC网站](https://ngc.nvidia.com/catalog/containers?orderBy=modifiedDESC&pageNumber=0&query=&quickFilter=containers&filters=)，其中可以浏览自己所需要的容器
 
-	![image-20201206195516130](https://raw.githubusercontent.com/wycyz1/blog_image/main/20201206195516.png)
+![image-20201206195516130](https://raw.githubusercontent.com/wycyz1/blog_image/main/20201206195516.png)
 
 ## 3. 自己根据自己的基础环境 如Tensorflow Pytorch进行搜索。
 
 	并进入其中。里面有该容器的参考文档请仔细阅读（参考文档中有基本环境的配置）。只需要将其Pull记住并告诉我。
 
-	![image-20201207181045933](https://raw.githubusercontent.com/wycyz1/blog_image/main/20201207181251.png)
+![image-20201207181045933](https://raw.githubusercontent.com/wycyz1/blog_image/main/20201207181251.png)
 
 # 三、告知需要开放的端口和映射文件夹以及用途
 
@@ -37,7 +37,7 @@ tags: ["GPU"]
 
 ## 1. 使用Xshell新建链接
 
-	![image-20210102205318604](https://raw.githubusercontent.com/wycyz1/blog_image/main/20210102205318.png)
+![image-20210102205318604](https://raw.githubusercontent.com/wycyz1/blog_image/main/20210102205318.png)
 
 ## 2. 链接配置
 

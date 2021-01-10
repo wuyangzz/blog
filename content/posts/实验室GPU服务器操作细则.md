@@ -37,11 +37,11 @@ date: 2021-01-10T10:42:55+08:00
 
 1. 打开[NGC网站](https://ngc.nvidia.com/catalog/containers?orderBy=modifiedDESC&pageNumber=0&query=&quickFilter=containers&filters=)，其中可以浏览自己所需要的容器
 
-   ![image-20201206195516130](https://raw.githubusercontent.com/wycyz1/blog_image/main/20201206195516.png)
+![image-20201206195516130](https://raw.githubusercontent.com/wycyz1/blog_image/main/20201206195516.png)
 
 2. 自己根据自己的基础环境 如Tensorflow Pytorch进行搜索。并进入其中。里面有该容器的参考文档。只需要将其Pull记住。
 
-   ![image-20201207181045933](https://raw.githubusercontent.com/wycyz1/blog_image/main/20201207181251.png)
+![image-20201207181045933](https://raw.githubusercontent.com/wycyz1/blog_image/main/20201207181251.png)
 
 3. 我们一般会提供一个使用jupyter的8888端口一个使用xshell和xftp的22端口。并且将用户名和密码告知。
 
