@@ -49,43 +49,43 @@ date: 2021-01-10T10:42:55+08:00
 
 ### docker命令
 
-   dockers ps -a **查看容器**
+   `dockers ps -a` **查看容器**
 
-   docker images 查看镜像
+   `docker images` 查看镜像
 
-   docker start 容器id   **启动容器**
+   `docker start 容器id`   **启动容器**
 
-   docker attach 容器id  **进入容器**
+   `docker attach 容器id`  **进入容器**
 
-   docker stop 容器id  **停止容器**
+  `docker stop 容器id`  **停止容器**
 
-   docker rm 容器id  **删除容器**
+   `docker rm 容器id`  **删除容器**
 
-   docker image rm  **镜像id  删除镜像id**
+  ` docker image rm`  **镜像id  删除镜像id**
 
-   docker load 本地镜像  **导入本地镜像**
+   `docker load` 本地镜像  **导入本地镜像**
 
    ##### ubuntu 基本命令
 
-   ps -ef |grep 程序名  **查看正在运行的程序**
+  ` ps -ef |grep 程序名 ` **查看正在运行的程序**
 
-   kill -9 程序pid  **杀死改pid的程序**
+   `kill -9 程序pid`  **杀死改pid的程序**
 
-   nohup jupyter-lab --ip 0.0.0.0 --port 8888 --allow-root > jupyter.log 2>&1 & **运行jupyter**
+   `nohup jupyter-lab --ip 0.0.0.0 --port 8888 --allow-root > jupyter.log 2>&1 &` **运行jupyter**
 
-   sudo apt-get install openssh-server **安装ssh服务器**
+  ` sudo apt-get install openssh-server` **安装ssh服务器**
 
    **配置ssh客户端**，去掉PasswordAuthentication yes前面的#号，保存退出
 
-   sudo vi /etc/ssh/ssh_config
+   `sudo vi /etc/ssh/ssh_config`
 
    ​	把PermitRootLogin prohibit-password改成PermitRootLogin yes
 
    **重启ssh服务**
 
-   ​	sudo /etc/init.d/ssh restart
+   ​	`sudo /etc/init.d/ssh restart`
 
-   passwd root **修改root密码**
+  ` passwd root` **修改root密码**
 
    1. *## step 1：终端输入*
    2. jupyter notebook *--generate -config*
