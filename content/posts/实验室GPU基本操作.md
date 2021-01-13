@@ -52,7 +52,9 @@ IP和端口配置（IP和端口都会告知）
 
 # 五、启动Jupyter lab
 
-​	``` nohup jupyter-lab --ip 0.0.0.0 --port 8888 --allow-root > jupyter.log 2>&1 &  ```
+```shell
+nohup jupyter-lab --ip 0.0.0.0 --port 8888 --allow-root > jupyter.log 2>&1 &  
+```
 
 
 

@@ -5,7 +5,7 @@
     <link>https://wuyangzz.github.io/posts/</link>
     <description>Recent content in Posts on wuyangzz</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>zh-cn</language>
     <lastBuildDate>Sun, 10 Jan 2021 10:42:55 +0800</lastBuildDate><atom:link href="https://wuyangzz.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>实验室GPU服务器操作细则</title>
@@ -13,7 +13,7 @@
       <pubDate>Sun, 10 Jan 2021 10:42:55 +0800</pubDate>
       
       <guid>https://wuyangzz.github.io/2021/%E5%AE%9E%E9%AA%8C%E5%AE%A4gpu%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%93%8D%E4%BD%9C%E7%BB%86%E5%88%99/</guid>
-      <description>实验室GPU服务器操作细则 实验室GPU简介  系统 ubuntu18.04 IP:172.23.253.104 172.23.253.15 双路3090显卡  docker docker 简介 ​	docker镜像可以看作是一个以及配置好了很多环境的操作系统，docker与虚拟机类似，但是两者在原理上有很大的不同。docker是讲操作系统的底层虚拟化，而虚拟机是将硬件虚拟化，因此docker具有更高的便携性和跟高效的利用服务器的性能。同时由于docker的标准化，它可以无视任何基础设施的标志，可以很简单的部署到任何的一个地方，另外docker重要的优点就是可以提供良好的隔离兼容。
+      <description>实验室GPU服务器操作细则 实验室GPU简介  系统 ubuntu18.04 IP:172.23.253.* 172.23.253.15* 双路3090显卡  docker docker 简介 ​	docker镜像可以看作是一个以及配置好了很多环境的操作系统，docker与虚拟机类似，但是两者在原理上有很大的不同。docker是讲操作系统的底层虚拟化，而虚拟机是将硬件虚拟化，因此docker具有更高的便携性和跟高效的利用服务器的性能。同时由于docker的标准化，它可以无视任何基础设施的标志，可以很简单的部署到任何的一个地方，另外docker重要的优点就是可以提供良好的隔离兼容。
 ​	其主要概念中最重要的就是为images container
   Images 是一个只读的模版，可以用来创建container，可以直接下载已经构建好的image，也可以自己通过Dockerfile来创建。   container 是image的可运行实例，其可以通过API和CLI(命令行)进行操作。   NGC ​	NGC是NVIDIA官方提供的容器，其主要的作用是为用户提供一个简单、高效、安全的镜像，方便用户可以最轻松的使用NVIDIA GPU。
 使用Docker CLI从NGC容器注册表中提取容器
@@ -23,7 +23,7 @@ docker start 容器id 启动容器
 docker attach 容器id 进入容器
 docker stop 容器id 停止容器
 docker rm 容器id 删除容器
-docker image rm 镜像id 删除镜像id</description>
+ docker image rm 镜像id 删除镜像id</description>
     </item>
     
     <item>
