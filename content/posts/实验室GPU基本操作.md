@@ -37,7 +37,7 @@ tags: ["GPU"]
 
 ## 1. 使用Xshell新建链接
 
-![image-20210102205318604](https://raw.githubusercontent.com/wycyz1/blog_image/main/20210102205318.png)
+![image-20210102205318604](https://raw.githubusercontent.com/wyhugo new /posts/GPU租用手册.mdcyz1/blog_image/main/20210102205318.png)
 
 ## 2. 链接配置
 
