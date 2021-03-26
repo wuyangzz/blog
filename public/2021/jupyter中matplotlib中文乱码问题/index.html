@@ -9,9 +9,9 @@
   
   
   
+  <link rel="prev" href="https://wuyangzz.github.io/2021/%E5%9B%BE%E7%89%87%E5%8A%A0%E5%99%AA%E5%A3%B0/" />
   
-  <link rel="next" href="https://wuyangzz.github.io/2021/%E5%AE%9E%E9%AA%8C%E5%AE%A4gpu%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" />
-  <link rel="canonical" href="https://wuyangzz.github.io/2021/test/" />
+  <link rel="canonical" href="https://wuyangzz.github.io/2021/jupyter%E4%B8%ADmatplotlib%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           Test | wuyangzz
+           Jupyter中matplotlib中文乱码问题 | wuyangzz
        
   </title>
-  <meta name="title" content="Test | wuyangzz">
+  <meta name="title" content="Jupyter中matplotlib中文乱码问题 | wuyangzz">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https:\/\/wuyangzz.github.io\/"
     },
     "articleSection" : "posts",
-    "name" : "Test",
-    "headline" : "Test",
-    "description" : "#include \u0026lt;iostream\u0026gt;using namespace std; int main() { cout \u0026lt;\u0026lt; \u0026#34;Hello, world!\u0026#34; \u0026lt;\u0026lt; endl; return 0; } ",
+    "name" : "Jupyter中matplotlib中文乱码问题",
+    "headline" : "Jupyter中matplotlib中文乱码问题",
+    "description" : "下载字体 首先下载中文字体，链接如下。\n字体下载链接 win中下载号以后可以直接安装字体\n修改matplotlibrc文件 matplotlibrc文件的位置如下：\nD:\\Anaconda3\\Lib\\site-packages\\matplotlib\\mpl-data （1）删掉 font.family前面的 # 并改为SimHei （2）删掉 font.sans-serif 前面的 #\n需要将刚才下载的SimHei添加到其中，如红色方框所示。  保存退出！\n把这个路径下的文件都删除（tex.cache和fontlist-.v310josn） c:\/\/用户\/\/用户名\/\/.matplotlib\n重新启动jupyter ",
     "inLanguage" : "zh-cn",
     "author" : "wuyangzz",
     "creator" : "wuyangzz",
@@ -54,11 +54,11 @@
     "accountablePerson" : "wuyangzz",
     "copyrightHolder" : "wuyangzz",
     "copyrightYear" : "2021",
-    "datePublished": "2021-01-09 21:18:44 \u002b0800 CST",
-    "dateModified" : "2021-01-09 21:18:44 \u002b0800 CST",
-    "url" : "https:\/\/wuyangzz.github.io\/2021\/test\/",
-    "wordCount" : "16",
-    "keywords" : [ "", "wuyangzz"]
+    "datePublished": "2021-03-26 17:01:43 \u002b0800 CST",
+    "dateModified" : "2021-03-26 17:01:43 \u002b0800 CST",
+    "url" : "https:\/\/wuyangzz.github.io\/2021\/jupyter%E4%B8%ADmatplotlib%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98\/",
+    "wordCount" : "20",
+    "keywords" : [ "matplotlib", "wuyangzz"]
 }
 </script>
 
@@ -116,16 +116,16 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Test</h1>
+        <h1 class="post-title" itemprop="name headline">Jupyter中matplotlib中文乱码问题</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://wuyangzz.github.io/" rel="author">wuyangzz</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2021-01-09 itemprop="datePublished">January 9, 2021</time>
+                on <time datetime=2021-03-26 itemprop="datePublished">March 26, 2021</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://wuyangzz.github.io/categories/">  </a>
+                        <a href="https://wuyangzz.github.io/categories/python/"> Python </a>
                         
                 </span>
         </div>
@@ -133,6 +133,8 @@
     <div class="post-content">
         
 
+        
+            
         
 
         
@@ -146,14 +148,25 @@
           
           
 
-          <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>using namespace std;
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
-{
-    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Hello, world!&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-}
-</code></pre></div>
+          <h1 id="下载字体">下载字体</h1>
+<p>首先下载中文字体，链接如下。</p>
+<p><a href="https://www.fontpalace.com/font-details/SimHei/">字体下载链接</a>
+<img src="https://raw.githubusercontent.com/wuyangzz/blog_image/main/20210326170248.png" alt="20210326170248">
+win中下载号以后可以直接安装字体</p>
+<h1 id="修改matplotlibrc文件">修改matplotlibrc文件</h1>
+<p>matplotlibrc文件的位置如下：</p>
+<pre><code>D:\Anaconda3\Lib\site-packages\matplotlib\mpl-data
+</code></pre><p>（1）删掉 font.family前面的 # 并改为SimHei
+<img src="https://raw.githubusercontent.com/wuyangzz/blog_image/main/20210326170504.png" alt="20210326170504"></p>
+<p>（2）删掉 font.sans-serif 前面的 #</p>
+<pre><code>需要将刚才下载的SimHei添加到其中，如红色方框所示。
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/wuyangzz/blog_image/main/20210326170531.png" alt="20210326170531"></p>
+<p>保存退出！</p>
+<h1 id="把这个路径下的文件都删除texcache和fontlist-v310josn">把这个路径下的文件都删除（tex.cache和fontlist-.v310josn）</h1>
+<p><code>c://用户//用户名//.matplotlib</code></p>
+<h1 id="重新启动jupyter">重新启动jupyter</h1>
+
     </div>
 
     <div class="post-copyright">
@@ -167,7 +180,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://wuyangzz.github.io/2021/test/>https://wuyangzz.github.io/2021/test/</span>
+                    <a href=https://wuyangzz.github.io/2021/jupyter%E4%B8%ADmatplotlib%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/>https://wuyangzz.github.io/2021/jupyter%E4%B8%ADmatplotlib%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/</span>
             </p>
             
             
@@ -179,8 +192,8 @@
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://wuyangzz.github.io/tags//">
-                    #</a></span>
+            <span class="tag"><a href="https://wuyangzz.github.io/tags/matplotlib/">
+                    #matplotlib</a></span>
             
             </section>
         
@@ -191,9 +204,9 @@
     </div>
 
     <div class="post-nav">
-         
         
-        <a href="https://wuyangzz.github.io/2021/%E5%AE%9E%E9%AA%8C%E5%AE%A4gpu%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="next" rel="next" title="实验室GPU基本操作">实验室GPU基本操作&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://wuyangzz.github.io/2021/%E5%9B%BE%E7%89%87%E5%8A%A0%E5%99%AA%E5%A3%B0/" class="prev" rel="prev" title="图片加噪声"><i class="iconfont icon-left"></i>&nbsp;图片加噪声</a>
+         
         
     </div>
 
@@ -236,8 +249,9 @@
 
 
     
-    
-    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
     
   
 
