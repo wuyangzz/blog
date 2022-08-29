@@ -1,8 +1,8 @@
 ---
 title: "Resume"
 author: "wuyangzz"
-tags: [""]
-categories: [""]
+tags: ["简历"]
+categories: ["简历"]
 date: 2022-08-21T13:20:39+08:00
 ---
 
