@@ -1,7 +1,7 @@
 baseURL = "https://wuyangzz.github.io/"
 languageCode = "zh-cn"
 title = "wuyangzz"
-theme = "LeaveIt"
+theme = "hugo-PaperMod"
 
 paginate = 12
 enableEmoji = true
