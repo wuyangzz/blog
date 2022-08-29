@@ -10,28 +10,29 @@ jobs:
   # 编译环境
   build:
     runs-on: ubuntu-latest
-
-    # 执行的步骤
     steps:
-    # 检出 sudrizzz/blog_workflow 工程，固定写法
-    - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+          fetch-depth: 0
 
-    - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2
-      with:
-        hugo-version: latest
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "latest"
+          extended: true
 
-    # 执行 hugo，编译出源文件
-    - name: Build
-      run: hugo
+      # 执行 hugo，编译出源文件
+      - name: Build
+        run: hugo
 
-    # 部署
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} 
-        external_repository: wuyangzz/wuyangzz.github.io     # Pages 发布到远程仓库
-        publish_dir: ./public       # hugo 编译生成的 public 目录下的文件
-        keep_files: false           # 不保留 *.github.io 仓库中已有的文件
-        publish_branch: main      # 远程仓库分支
-        commit_message: ${{ github.event.head_commit.message }}
+      # 部署
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} 
+          external_repository: wuyangzz/wuyangzz.github.io     # Pages 发布到远程仓库
+          publish_dir: ./public       # hugo 编译生成的 public 目录下的文件
+          keep_files: false           # 不保留 *.github.io 仓库中已有的文件
+          publish_branch: main      # 远程仓库分支
+          commit_message: ${{ github.event.head_commit.message }}
