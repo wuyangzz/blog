@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="wuyangzz">
+  
+  
+  
+  <link rel="prev" href="https://wuyangzz.github.io/2021/bi-directional-semi-supervised-training-of-convolutional-neural-networks-for-ultrasound-elastography-displacement-estimation/" />
+  <link rel="next" href="https://wuyangzz.github.io/2021/arflow%E8%BF%90%E4%BD%9C%E6%AD%A5%E9%AA%A4/" />
+  <link rel="canonical" href="https://wuyangzz.github.io/2021/%E5%9F%BA%E4%BA%8E%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%85%89%E6%B5%81%E6%B3%95%E7%BB%BC%E8%BF%B0/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           基于无监督学习的光流法综述 | wuyangzz
+       
+  </title>
+  <meta name="title" content="基于无监督学习的光流法综述 | wuyangzz">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/wuyangzz.github.io\/"
+    },
+    "articleSection" : "posts",
+    "name" : "基于无监督学习的光流法综述",
+    "headline" : "基于无监督学习的光流法综述",
+    "description" : "基于U-NetPLusPLUSPLUs和自己监督学习的左心肌运动追踪 摘要 心血管疾病(Cardiovascular diseases ，CVDs)是一种严重威胁人类健康的高发性疾病，其高发病率和死亡率已经严重影响了人类的生存。如何尽早的诊断出心血管疾病尤为重要，在早期通过技术诊断出心肌的生理特性可以有效的获取心室的健康状况，进而尽早的进行干预可以有效的降低心血管疾病的发病率。本文针对左心肌运动的特点，提出一种快速诊断基于像提供的信息，结合Unet3\u002b心室分割和无监督的心肌运动追踪方法获取心肌的运动情况的方法。主要研究的内容有：1、搭建全连接Unet3\u002b网络精确分割左心肌；2、在精确分割左心肌后，根据无监督光流估计方法估计B模式超声心动图连续两帧图像心肌运动情况，得到左心肌位移场信息；3、使用心肌运动模式数据和真实B模式心脏超声数据对心肌运动信息进行量化对比和评估。\n心室壁运动追踪应用情况  ",
+    "inLanguage" : "zh-cn",
+    "author" : "wuyangzz",
+    "creator" : "wuyangzz",
+    "publisher": "wuyangzz",
+    "accountablePerson" : "wuyangzz",
+    "copyrightHolder" : "wuyangzz",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-09-26 14:08:27 \u002b0800 CST",
+    "dateModified" : "2021-09-26 14:08:27 \u002b0800 CST",
+    "url" : "https:\/\/wuyangzz.github.io\/2021\/%E5%9F%BA%E4%BA%8E%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%85%89%E6%B5%81%E6%B3%95%E7%BB%BC%E8%BF%B0\/",
+    "wordCount" : "6",
+    "keywords" : [ "", "wuyangzz"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://wuyangzz.github.io/">wuyangzz</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">博客</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/about/" title="关于我">关于我</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://wuyangzz.github.io/">wuyangzz</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">博客</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/about/" title="关于我">关于我</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">基于无监督学习的光流法综述</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://wuyangzz.github.io/" rel="author">wuyangzz</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2021-09-26 itemprop="datePublished">September 26, 2021</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://wuyangzz.github.io/categories/">  </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h1 id="基于u-netplusplusplus和自己监督学习的左心肌运动追踪">基于U-NetPLusPLUSPLUs和自己监督学习的左心肌运动追踪</h1>
+<h1 id="摘要">摘要</h1>
+<p>心血管疾病(Cardiovascular diseases ，CVDs)是一种严重威胁人类健康的高发性疾病，其高发病率和死亡率已经严重影响了人类的生存。如何尽早的诊断出心血管疾病尤为重要，在早期通过技术诊断出心肌的生理特性可以有效的获取心室的健康状况，进而尽早的进行干预可以有效的降低心血管疾病的发病率。本文针对左心肌运动的特点，提出一种快速诊断基于像提供的信息，结合Unet3+心室分割和无监督的心肌运动追踪方法获取心肌的运动情况的方法。主要研究的内容有：1、搭建全连接Unet3+网络精确分割左心肌；2、在精确分割左心肌后，根据无监督光流估计方法估计B模式超声心动图连续两帧图像心肌运动情况，得到左心肌位移场信息；3、使用心肌运动模式数据和真实B模式心脏超声数据对心肌运动信息进行量化对比和评估。</p>
+<h1 id="心室壁运动追踪应用情况">心室壁运动追踪应用情况</h1>
+<h1 id="heading"></h1>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>wuyangzz </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://wuyangzz.github.io/2021/%E5%9F%BA%E4%BA%8E%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%85%89%E6%B5%81%E6%B3%95%E7%BB%BC%E8%BF%B0/>https://wuyangzz.github.io/2021/%E5%9F%BA%E4%BA%8E%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%85%89%E6%B5%81%E6%B3%95%E7%BB%BC%E8%BF%B0/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://wuyangzz.github.io/tags//">
+                    #</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://wuyangzz.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://wuyangzz.github.io/2021/bi-directional-semi-supervised-training-of-convolutional-neural-networks-for-ultrasound-elastography-displacement-estimation/" class="prev" rel="prev" title="Bi Directional Semi Supervised Training of Convolutional Neural Networks for Ultrasound Elastography Displacement Estimation"><i class="iconfont icon-left"></i>&nbsp;Bi Directional Semi Supervised Training of Convolutional Neural Networks for Ultrasound Elastography Displacement Estimation</a>
+         
+        
+        <a href="https://wuyangzz.github.io/2021/arflow%E8%BF%90%E4%BD%9C%E6%AD%A5%E9%AA%A4/" class="next" rel="next" title="ARflow运作步骤">ARflow运作步骤&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2022</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://wuyangzz.github.io/">wuyangzz</a> | </span> 
+         
+
+         
+	<span>Powered by <a href="https://github.com/wuyangzz/" target="_blank" rel="external nofollow">wuyangzz</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span>     </div>
+</footer>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

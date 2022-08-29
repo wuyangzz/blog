@@ -6,7 +6,119 @@
     <description>Recent content in Posts on wuyangzz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 26 Mar 2021 17:01:43 +0800</lastBuildDate><atom:link href="https://wuyangzz.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Aug 2022 10:40:49 +0800</lastBuildDate><atom:link href="https://wuyangzz.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>常用工具推荐</title>
+      <link>https://wuyangzz.github.io/2022/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/</link>
+      <pubDate>Mon, 29 Aug 2022 10:40:49 +0800</pubDate>
+      
+      <guid>https://wuyangzz.github.io/2022/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/</guid>
+      <description>提高效率的工具 1.Github Colopit\Tabnine(阿里) 强烈推荐！！！！！ Github Copilot是一个VS Code扩展，它可以自动完成你的代码，也可以通过看到你的注释和函数名来合成代码。这是用相同的模型构建的，并在数十亿的公共代码上进行了训练。
+官网：https://github.com/features/copilot 介绍: GitHub Copilot 是一个 AI 对编程工具，可在您编写代码时提供自动完成样式的建议。 您可以通过开始编写要使用的代码，或编写描述您希望代码执行的操作的自然语言注释，以接收来自 GitHub Copilot 的建议。 GitHub Copilot 分析您正在编辑的文件中的上下文以及相关文件，并从文本编辑器中提供建议。 GitHub Copilot 经过优化，可帮助您编写 Python、JavaScript、TypeScript、Ruby、Go、C# 或 C++。 您还可以使用 GitHub Copilot 以其他语言和各种框架生成建议。 GitHub Copilot 由 OpenAI Codex 提供支持，OpenAI Codex 是由 OpenAI 创建的新 AI 系统。 GitHub Copilot 可作为 IDE 的 Visual Studio Code、Visual Studio、Neovim 和 JetBrains 套件的扩展。
+Visual Studio Code插件： https://docs.github.com/cn/copilot/getting-started-with-github-copilot/getting-started-with-github-copilot-in-visual-studio-code
+ 在Visual Studio Code Marketplace中，转到GitHub Copilot扩展页面，然后单击“安装”。   如果以前没有在GitHub帐户中授权Visual Studio代码，则会提示在Visual Studio Code中登录GitHub。如果以前在GitHub上为您的帐户授权了Visual Studio代码，则将自动授权GitHub Copilot。  JetBrains IDE插件： https://docs.</description>
+    </item>
+    
+    <item>
+      <title>Resume</title>
+      <link>https://wuyangzz.github.io/2022/resume/</link>
+      <pubDate>Sun, 21 Aug 2022 13:20:39 +0800</pubDate>
+      
+      <guid>https://wuyangzz.github.io/2022/resume/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dicom文件处理</title>
+      <link>https://wuyangzz.github.io/2021/dicom%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/</link>
+      <pubDate>Sat, 09 Oct 2021 10:17:39 +0800</pubDate>
+      
+      <guid>https://wuyangzz.github.io/2021/dicom%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/</guid>
+      <description>使用阈值去掉杂乱的信息 import cv2 import os import pydicom import numpy as np # dicom图像输入路径 inputdir = &amp;#39;/workspace/20210910/Bmodel/inputs&amp;#39; # dicom图像输出路径 outdir = &amp;#39;/workspace/20210910/Bmodel/max_contours_images/&amp;#39; # 获取文件夹下文件列表 files_name_list=os.listdir(inputdir) count=0 # 遍历所有文件 def findMaxcontours(data): _, binaryzation = cv2.threshold(data, 2, 255, cv2.THRESH_BINARY_INV) binaryzation = np.uint8(binaryzation) # 找到所有的轮廓 contours, _ = cv2.findContours( binaryzation, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE) area = [] # 找到最大的轮廓 实际应该为第二大轮廓 for k in range(len(contours)): area.append(cv2.contourArea(contours[k])) # max_idx = np.argmax(np.array(area)) max_idx = np.argsort(np.array(area))[-2] # cv2.fillContexPoly(mask[i], contours[max_idx], 0) # 填充最大的轮廓 mask = cv2.</description>
+    </item>
+    
+    <item>
+      <title>UnSupRAFT运行</title>
+      <link>https://wuyangzz.github.io/2021/unsupraft%E8%BF%90%E8%A1%8C/</link>
+      <pubDate>Wed, 29 Sep 2021 10:44:43 +0800</pubDate>
+      
+      <guid>https://wuyangzz.github.io/2021/unsupraft%E8%BF%90%E8%A1%8C/</guid>
+      <description>数据准备 dicom_to_image.py：
+import cv2 import os import pydicom # dicom图像输入路径 inputdir = &amp;#39;/workspace/20210910/Bmodel/inputs&amp;#39; # dicom图像输出路径 outdir = &amp;#39;/workspace/UnSupRAFT/datasets/heart/&amp;#39; # 获取文件夹下文件列表 files_name_list=os.listdir(inputdir) count=0 # 遍历所有文件 for file_name in files_name_list: path=os.path.join(inputdir,file_name) ds=pydicom.read_file(path) # 获取该文件的帧数 num_frame=ds.pixel_array.shape[0] # 逐帧保存为PNG无损图像 for i in range(num_frame): # if not os.path.exists(os.path.join(outdir,file_name)): # os.makedirs(os.path.join(outdir,file_name)) if i==0: image1 =ds.pixel_array[i, 70:550, 47:751] else: image2 = ds.pixel_array[i, 70:550, 47:751] cv2.imwrite(os.path.join(outdir, str( count)+&amp;#34;_1.png&amp;#34;), image1, [cv2.IMWRITE_PNG_COMPRESSION, 0]) cv2.imwrite(os.path.join(outdir, str( count)+&amp;#34;_2.png&amp;#34;), image2, [cv2.IMWRITE_PNG_COMPRESSION, 0]) image1=image2 count+=1 设置数据集heart_dataset.</description>
+    </item>
+    
+    <item>
+      <title>ARflow运作步骤</title>
+      <link>https://wuyangzz.github.io/2021/arflow%E8%BF%90%E4%BD%9C%E6%AD%A5%E9%AA%A4/</link>
+      <pubDate>Mon, 27 Sep 2021 16:19:54 +0800</pubDate>
+      
+      <guid>https://wuyangzz.github.io/2021/arflow%E8%BF%90%E4%BD%9C%E6%AD%A5%E9%AA%A4/</guid>
+      <description>1、安装对应的包 2、修改setup.py文件 c++ 版本 gencode cuda_path
+#!/usr/bin/env python3 import os import torch from setuptools import setup, find_packages from torch.utils.cpp_extension import BuildExtension, CUDAExtension cxx_args = [&amp;#39;-std=c++14&amp;#39;] nvcc_args = [ &amp;#39;-gencode&amp;#39;, &amp;#39;arch=compute_50,code=sm_50&amp;#39;, &amp;#39;-gencode&amp;#39;, &amp;#39;arch=compute_52,code=sm_52&amp;#39;, &amp;#39;-gencode&amp;#39;, &amp;#39;arch=compute_60,code=sm_60&amp;#39;, &amp;#39;-gencode&amp;#39;, &amp;#39;arch=compute_61,code=sm_61&amp;#39;, &amp;#39;-gencode&amp;#39;, &amp;#39;arch=compute_86,code=sm_86&amp;#39;, &amp;#39;-gencode&amp;#39;, &amp;#39;arch=compute_86,code=compute_86&amp;#39;, &amp;#39;-ccbin&amp;#39;, &amp;#39;/usr/bin/gcc&amp;#39; ] setup( name=&amp;#39;correlation_cuda&amp;#39;, ext_modules=[ CUDAExtension(&amp;#39;correlation_cuda&amp;#39;, [ &amp;#39;correlation_cuda.cc&amp;#39;, &amp;#39;correlation_cuda_kernel.cu&amp;#39; ], extra_compile_args={&amp;#39;cxx&amp;#39;: cxx_args, &amp;#39;nvcc&amp;#39;: nvcc_args, &amp;#39;cuda-path&amp;#39;: [&amp;#39;/usr/local/cuda&amp;#39;]}) ], cmdclass={ &amp;#39;build_ext&amp;#39;: BuildExtension }) </description>
+    </item>
+    
+    <item>
+      <title>基于无监督学习的光流法综述</title>
+      <link>https://wuyangzz.github.io/2021/%E5%9F%BA%E4%BA%8E%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%85%89%E6%B5%81%E6%B3%95%E7%BB%BC%E8%BF%B0/</link>
+      <pubDate>Sun, 26 Sep 2021 14:08:27 +0800</pubDate>
+      
+      <guid>https://wuyangzz.github.io/2021/%E5%9F%BA%E4%BA%8E%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%85%89%E6%B5%81%E6%B3%95%E7%BB%BC%E8%BF%B0/</guid>
+      <description>基于U-NetPLusPLUSPLUs和自己监督学习的左心肌运动追踪 摘要 心血管疾病(Cardiovascular diseases ，CVDs)是一种严重威胁人类健康的高发性疾病，其高发病率和死亡率已经严重影响了人类的生存。如何尽早的诊断出心血管疾病尤为重要，在早期通过技术诊断出心肌的生理特性可以有效的获取心室的健康状况，进而尽早的进行干预可以有效的降低心血管疾病的发病率。本文针对左心肌运动的特点，提出一种快速诊断基于像提供的信息，结合Unet3+心室分割和无监督的心肌运动追踪方法获取心肌的运动情况的方法。主要研究的内容有：1、搭建全连接Unet3+网络精确分割左心肌；2、在精确分割左心肌后，根据无监督光流估计方法估计B模式超声心动图连续两帧图像心肌运动情况，得到左心肌位移场信息；3、使用心肌运动模式数据和真实B模式心脏超声数据对心肌运动信息进行量化对比和评估。
+心室壁运动追踪应用情况  </description>
+    </item>
+    
+    <item>
+      <title>Bi Directional Semi Supervised Training of Convolutional Neural Networks for Ultrasound Elastography Displacement Estimation</title>
+      <link>https://wuyangzz.github.io/2021/bi-directional-semi-supervised-training-of-convolutional-neural-networks-for-ultrasound-elastography-displacement-estimation/</link>
+      <pubDate>Wed, 22 Sep 2021 20:35:49 +0800</pubDate>
+      
+      <guid>https://wuyangzz.github.io/2021/bi-directional-semi-supervised-training-of-convolutional-neural-networks-for-ultrasound-elastography-displacement-estimation/</guid>
+      <description>文章阅读 标题Title Bi-Directional Semi-Supervised Training of Convolutional Neural Networks for Ultrasound Elastography Displacement Estimation Ali K. Z. Tehrani, Mostafa Sharifzadeh, Emad Boctor and Hassan Rivaz 超声弹性成像位移估计的卷积神经网络双向半监督训练 审稿文章 发表于TUFFC
+摘要Abstract 超声弹性成像的性能在很大程度上取决于位移估计的准确性。最近，卷积神经网络(CNN)在光流估计中显示出良好的性能，并已被用于位移估计 自己实验室最先发表。由于在计算机视觉图像和高频射频超声数据之间存在很大的差距 RFPWC-Net该文章中明确表表明，所以在计算机视觉图像上训练的网络不能直接用于位移估计 (因为超声数据最主要的是有很多的高频数据和噪点) 。许多研究人员试图采用光流CNN，通过应用 迁移学习(自己的心脏模型能不能使用KITTI和fly以及sinetl数据集合上进行先训练，训练以后在进行迁移学习) 来提高CNN的使用性能。然而，实际超声数据中的地面真实位移是未知的，并且仿真数据与真实数据相比表现出域移，并且生成的计算量也很大。为了解决这个问题，已经提出了半监督方法，其中使用真实的超声数据来微调对计算机视觉图像进行预训练的网络。本文采用半监督方法，利用位移场的一阶和二阶导数进行正则化。我们还修改了网络结构以估计向前和向后位移，并提出使用向前和向后应变之间的一致性作为额外的正则化以进一步提高性能。我们用几个实验体模和活体数据验证了我们的方法。我们还表明，由我们提出的方法使用实验体模数据微调的网络在活体数据上表现良好，类似于在活体数据上微调的网络。我们的结果还表明，该方法的性能优于现有的深度学习方法，并且与计算量较大的基于优化的算法相当。
+介绍Introduction 超声成像与其他成像手段相比，价格便宜，携带方便，已被越来越多的研究者和临床医生用于诊断和图像引导介入治疗。超声弹性成像(USE)是一种检测组织粘弹性属性的成像技术，已被发现用于不同的应用，包括消融监测[1]、[2]和乳房病变定性[3]。使用方法跟踪组织的运动，大致可分为两组：准静态超声弹性成像和动态超声弹性成像。在动态弹性成像中，声辐射力或内力被用来在组织中产生快速运动[4]。相反，在准静态弹性成像中，组织中的运动是缓慢的，可以通过操作者简单地按下探头(徒手触诊)或使用机械臂来诱导[5]-[8]。
+本位主要估计的是使用手触摸组织得到的准静态弹性成像 实际上，弹性成像 (Elastography) 一词最早由 Ophir 等人提出 [a]，因此狭义的弹性成像仅指这种静态力激励下的成像技术 [b]。 其中准静态超声成像技术因具有高分辨率、实时性、不需要额外改进传统超声设备等优点而得到广泛应用。然而,准静态超声弹性成像算法仍然面临着挑战:不正确的匹配点导致弹性成像效果差、实时性要求较高、根据经验设置的窗口系数不能自适应组织等。 [a] Ophir J, Cespedes I, Ponnekanti H, et al. Elastography: a quantitative method for imaging the elasticity of biological tissues[J].Ultrasonic Imaging,1991,13(2):111-134. [b] 罗建文, 白净.</description>
+    </item>
+    
+    <item>
+      <title>自监督文献综述</title>
+      <link>https://wuyangzz.github.io/2021/%E8%87%AA%E7%9B%91%E7%9D%A3%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0/</link>
+      <pubDate>Wed, 28 Jul 2021 15:09:37 +0800</pubDate>
+      
+      <guid>https://wuyangzz.github.io/2021/%E8%87%AA%E7%9B%91%E7%9D%A3%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0/</guid>
+      <description>综合对比：    paper code Method KITTI 2012 KITTI 2015 Sintel Clean Sintel Final        train test train test(F1-all)   Jason J Y, Harley A W, Derpanis K G. Back to basics: Unsupervised learning of optical flow via brightness constancy and motion smoothness[C]//European Conference on Computer Vision. Springer, Cham, 2016: 3-10. https://github.com/ryersonvisionlab/unsupFlownet BackToBasic 11.3 9.9 – –   Ren Z, Yan J, Ni B, et al.</description>
+    </item>
+    
+    <item>
+      <title>通过类比学习：无监督光流量估计转换的可靠监督</title>
+      <link>https://wuyangzz.github.io/2021/%E9%80%9A%E8%BF%87%E7%B1%BB%E6%AF%94%E5%AD%A6%E4%B9%A0%E6%97%A0%E7%9B%91%E7%9D%A3%E5%85%89%E6%B5%81%E9%87%8F%E4%BC%B0%E8%AE%A1%E8%BD%AC%E6%8D%A2%E7%9A%84%E5%8F%AF%E9%9D%A0%E7%9B%91%E7%9D%A3/</link>
+      <pubDate>Tue, 13 Jul 2021 16:19:40 +0800</pubDate>
+      
+      <guid>https://wuyangzz.github.io/2021/%E9%80%9A%E8%BF%87%E7%B1%BB%E6%AF%94%E5%AD%A6%E4%B9%A0%E6%97%A0%E7%9B%91%E7%9D%A3%E5%85%89%E6%B5%81%E9%87%8F%E4%BC%B0%E8%AE%A1%E8%BD%AC%E6%8D%A2%E7%9A%84%E5%8F%AF%E9%9D%A0%E7%9B%91%E7%9D%A3/</guid>
+      <description>CVPR文章  Occlusion Aware Unsupervised Learning of Optical Flow  @misc{wang2018occlusion, title={Occlusion Aware Unsupervised Learning of Optical Flow}, author={Yang Wang and Yi Yang and Zhenheng Yang and Liang Zhao and Peng Wang and Wei Xu}, year={2018}, eprint={1711.05890}, archivePrefix={arXiv}, primaryClass={cs.CV} } 分别求出前向光流和后向光流，通过前向光流进行重建后向光流 $\widetilde{I}_1$ 向后流用于通过前向翘曲产生遮挡贴图$（O）$ photometric loss 光度损失：相当于求两个图片中所有点的相似性。 smoothness loss 正则化平滑：仅基于光度损失的无监督学习对于无纹理的地方是模糊的。减少模糊度最常用的方法就是平滑正则化smoothness loss函数。 文章提高了一种端到端的无监督学习框架，可以训练为标记视频的光流信息。主要参考了FlowNets模型，做出了一定的改进。
+可用思路:将FlowNets模型用于我们实验室的PWC-Net模型。其他地方基本可以不用做改变。可以看看后面其他论文改进的部分。
+ Learning by Analogy: Reliable Supervision from Transformations for Unsupervised Optical Flow Estimation  @inproceedings{liu2020learning, title = {Learning by Analogy: Reliable Supervision from Transformations for Unsupervised Optical Flow Estimation}, author = {Liu, Liang and Zhang, Jiangning and He, Ruifei and Liu, Yong and Wang, Yabiao and Tai, Ying and Luo, Donghao and Wang, Chengjie and Li, Jilin and Huang, Feiyue}, booktitle = {IEEE Conference on Computer Vision and Pattern Recognition(CVPR)}, year = {2020} } 和上一个网络有一定的差别 以PWC-Net 网络图： 成功在自己笔记本上实现部署模型并且测试代码： 模型部署比较麻烦。需要在cuda9.</description>
+    </item>
+    
+    <item>
+      <title>文章阅读</title>
+      <link>https://wuyangzz.github.io/2021/%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Wed, 28 Apr 2021 19:09:00 +0800</pubDate>
+      
+      <guid>https://wuyangzz.github.io/2021/%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB/</guid>
+      <description>分类 超声模拟心动图 Detailed Evaluation of Five 3D Speckle Tracking Algorithms Using Synthetic Echocardiographic Recordings  作者：Alessandrini, M.; Heyde, B.; Queiros, S. (&amp;hellip;) 来源：IEEE Transactions on Medical Imaging, 2016, 35(8), 1915-1926 摘要：3D超声定量心脏畸形和应变需要大量的研究工作。 然而，由于缺乏可靠的验证过程来量化和比较性能，这些技术在临床实践中仍被广泛使用。 在这种情况下，使用全合成序列已成为用于初始计算机评估的既定工具。 然而，现有仿真技术的现实性仍然太局限，无法代表可靠的基准数据。 此外，不同的中心通常会利用内部开发的仿真管道这一事实使得比较存在一定难度。 在原始框架中利用真实的超声记录学习和模拟现实的斑点纹理。模拟的图像显示了典型的伪像，使得在超声挑战中进行运动跟踪。地面真相位移场可用垂直方向通过电子机械模型进行控制。通过对机械和超声参数进行渐进地修改机械和超声算法，以感性地改变3D路径 并可以评估图像属性。 拟议中的管道用于生成包括健康和病理案例在内的8个序列的初始库，可通过我们的项目网页将其免费提供给研究社区。  A Pipeline for the Generation of Realistic 3D Synthetic Echocardiographic Sequences: Methodology and Open-Access Database  作者：Alessandrini, M.; De Craene, M.; Bernard, O. (&amp;hellip;) 来源：IEEE Transactions on Medical Imaging, 2015, 34(7), 1436-1451 摘要：使用3D超声对心脏变形和应变进行量化需要大量的研究工作。然而，由于缺乏可靠的验证过程来量化和比较性能，这些技术在临床实践中的广泛使用仍然受到阻碍。在这种情况下，使用完全合成的序列已成为用于初始计算机评估的既定工具。然而，现有仿真技术的现实性仍然太局限，无法代表可靠的基准数据。此外，不同的中心通常利用内部开发的模拟管道这一事实使得进行公平的比较变得困难。在这种情况下，本文介绍了一种用于生成合成3D心脏超声图像序列的新颖流水线。机电建模和超声仿真领域中的最新解决方案在原始框架内进行了组合，该框架利用真实的超声记录来学习和模拟逼真的斑点纹理。模拟图像显示了典型的伪像，这些伪像使超声中的运动跟踪变得困难。地面真实位移场在体素方向可用，并且完全由机电模型控制。通过逐步修改机械和超声参数，可以评估3D应变算法对病理学和图像特性的敏感性。拟议中的管道用于生成包括健康和病理病例在内的8个序列的初始文库，该库可通过我们的项目网页免费提供给研究社区。地面真实位移场在体素方向可用，并且完全由机电模型控制。通过逐步修改机械和超声参数，可以评估3D应变算法对病理学和图像特性的敏感性。拟议中的管道用于生成包括健康和病理病例在内的8个序列的初始文库，该库可通过我们的项目网页免费提供给研究社区。地面实测位移场在体素方向可用，并且完全由机电模型控制。通过逐步修改机械和超声参数，可以评估3D应变算法对病理学和图像特性的敏感性。拟议中的管道用于生成包括健康和病理病例在内的8个序列的初始文库，该库可通过我们的项目网页免费提供给研究社区。  可用于VFM验证</description>
+    </item>
+    
+    <item>
+      <title>Pytorch入门手写数字</title>
+      <link>https://wuyangzz.github.io/2021/pytorch%E5%85%A5%E9%97%A8%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/</link>
+      <pubDate>Fri, 09 Apr 2021 13:23:43 +0800</pubDate>
+      
+      <guid>https://wuyangzz.github.io/2021/pytorch%E5%85%A5%E9%97%A8%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/</guid>
+      <description>#导入需要的包 import numpy as np import torch from torch import nn from PIL import Image import torchvision import matplotlib.pyplot as plt import os from torchvision import datasets, transforms,utils Step1：准备数据。 transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize(mean=[0.5],std=[0.5])]) train_data = datasets.MNIST(root = &amp;#34;./data/&amp;#34;, transform=transform, train = True, download = True) test_data = datasets.MNIST(root=&amp;#34;./data/&amp;#34;, transform = transform, train = False) print(len(train_data)) print(len(test_data)) 60000 10000  train_data 的个数：60000个训练样本
+test_data 的个数：10000个训练样本
+train_loader = torch.utils.data.DataLoader(train_data,batch_size=128, shuffle=True,num_workers=2) test_loader = torch.utils.data.DataLoader(test_data,batch_size=128, shuffle=True,num_workers=2) print(len(train_loader)) print(len(test_loader)) 469 79  加载到dataloader中后，一个dataloader是一个batch的数据</description>
+    </item>
+    
     <item>
       <title>Jupyter中matplotlib中文乱码问题</title>
       <link>https://wuyangzz.github.io/2021/jupyter%E4%B8%ADmatplotlib%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/</link>
