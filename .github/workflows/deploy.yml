@@ -23,7 +23,7 @@ jobs:
 
     # 执行 hugo，编译出源文件
     - name: Build
-      run: hugo --gc --minify --cleanDestinationDir
+      run: hugo --minify
 
       # 部署
     - name: Deploy
