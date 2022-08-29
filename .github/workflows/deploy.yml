@@ -10,21 +10,20 @@ jobs:
   # 编译环境
   build:
     runs-on: ubuntu-latest
+
+    # 执行的步骤
     steps:
-      - uses: actions/checkout@v1
-        with:
-          submodules: true
-          fetch-depth: 0
+    # 检出 sudrizzz/blog_workflow 工程，固定写法
+    - uses: actions/checkout@v1
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: "latest"
-          extended: true
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: latest
 
-      # 执行 hugo，编译出源文件
-      - name: Build
-        run: hugo --minify
+    # 执行 hugo，编译出源文件
+    - name: Build
+      run: hugo --gc --minify --cleanDestinationDir
 
       # 部署
       - name: Deploy
